@@ -22,7 +22,7 @@ To run the full demo you will also need:
  
 You can run the device just as a temperature sensor without connecting it to Wifi or Firebase.
 
-## Devie features:
+## Device features:
 * Communications are secure (https) and are direct to Firebase (no proxy)
 * Handles wifi drop outs/ins (SSID green = connected, SSID red = not connected)
 * Displays message payload and status (displays data size in bytes, green background = message success, red background = message failed)
