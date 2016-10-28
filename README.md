@@ -13,7 +13,7 @@ This is an IoT device using a BMP180 temp sensor on an ESP8266 12e (nodeMCU v1.0
  
 The device uses the following components:
  - ESP8266 12e (nodeMCU 1.0)
- - ST7735 display (SPI)
+ - ST7735 1.8" display (SPI)
  - BMP180 temperature sensor (I2C)
  
 To run the full demo you will also need:
