@@ -23,9 +23,9 @@ To run the full demo you will also need:
 You can run the device just as a temperature sensor without connecting it to Wifi or Firebase.
 
 ## Device features:
-* Communications are secure (https) and are direct to Firebase (no proxy)
-* Handles wifi drop outs/ins (SSID green = connected, SSID red = not connected)
-* Displays message payload and status (displays data size in bytes, green background = message success, red background = message failed)
+* Communications are secure (via https) and are direct to Firebase (no proxy).
+* Handles wifi drop outs/ins (SSID green = connected, SSID red = not connected).
+* Displays message payload and status (displays data size in bytes, green background = message success, red background = message failure).
 
 ## Future Updates:
 I am already planning to add the ability to monitor multiple devices.  Although the changes to the arduino code is easy enough (I'll include the MAC address of the device in the post to Firebase) the client changes start to get a bit more complex especially as I want to have swipe navigation to swap between devices.
