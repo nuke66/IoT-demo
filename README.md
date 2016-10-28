@@ -4,7 +4,7 @@
 ![IoT Demo](http://www.nuke66.com/temp/IoT_demo.jpg)
 
 ## Intro:
-I have created this IoT demonstration as a portfolio piece.  The point of the demo isn't to make an accurate temp sensor, it's to demonstrate connecting an IoT device securely (encrypted) to a cloud service for subscribers to consume.  Importantly this demo is very low cost, as cheap as AU$25 for components and Google Firebase currently has a free pricing tier.
+I have created this IoT demonstration as a portfolio piece.  The point of the demo isn't to make an accurate temp sensor (although you could make it), it's to demonstrate connecting an IoT device securely (encrypted) to a cloud service for subscribers to consume.  Importantly this demo is very low cost, as cheap as AU$25 for components and Google Firebase currently has a free pricing tier.
 
 I have put **LOTS** of comments into the code to help people understand what is going on and some of limitations of the hardware.  Unfortunately the ESP8266 on Arduino is an ongoing work in progress and I've already had to rewrite the demo once due to library updates breaking the code base.   
 
