@@ -8,7 +8,7 @@ I have created this IoT demonstration as a portfolio piece.  The point of the de
 
 I have put LOTS of comments into the code to help people understand what is going on and some of limitations of the hardware.  Unfortunately the ESP8266 on Arduino is an ongoing work in progress and I've already had to rewrite the demo once due to library updates breaking the code base.   
 
-## DESCRIPTION:
+## Description:
 This is an IoT device using a BMP180 temp sensor on an ESP8266 12e (nodeMCU v1.0) micro controller.  The device connects to Google Firebase using the REST API to post sensor readings. Web clients can then access the temp data through the Firebase API.   For the demo I have a one page HMTL site using the Firebase Javascript API to receive dynamic callbacks as new data is posted.  The demo utilises the ESP8266's ability to connect via HTTPS which is required to talk to the Firebase cloud service.
  
 The device uses the following components:
@@ -22,5 +22,5 @@ To run the full demo you will also need:
  
 You can run the device just as a temperature sensor without connecting it to Wifi or Firebase.
 
-## FUTURE UPDATES:
+## Future Updates:
 I am already planning to add the ability to monitor multiple devices.  Although the changes to the arduino code is easy enough (I'll include the MAC address of the device in the post to Firebase) the client changes start to get a bit more complex especially as I want to have swipe navigation to swap between devices.
