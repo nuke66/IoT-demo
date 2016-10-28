@@ -4,12 +4,12 @@
 ![IoT Demo](http://www.nuke66.com/temp/IoT_demo.jpg)
 
 ## Intro:
-I have created this IoT demonstration as a portfolio piece.  The point of the demo isn't to make an accurate temp sensor, it's to demonstrate connecting an IoT device securely (encrypted ) to a cloud service for subscribers to consume.  Importantly this demo is very low cost, as cheap as AU$25 for components and Google Firebase currently has a free pricing tier.
+I have created this IoT demonstration as a portfolio piece.  The point of the demo isn't to make an accurate temp sensor, it's to demonstrate connecting an IoT device securely (encrypted) to a cloud service for subscribers to consume.  Importantly this demo is very low cost, as cheap as AU$25 for components and Google Firebase currently has a free pricing tier.
 
 I have put LOTS of comments into the code to help people understand what is going on and some of limitations of the hardware.  Unfortunately the ESP8266 on Arduino is an ongoing work in progress and I've already had to rewrite the demo once due to library updates breaking the code base.   
 
 ## Description:
-This is an IoT device using a BMP180 temp sensor on an ESP8266 12e (nodeMCU v1.0) micro controller.  The device connects to Google Firebase using the REST API to post sensor readings. Web clients can then access the temp data through the Firebase API.   For the demo I have a one page HMTL site using the Firebase Javascript API to receive dynamic callbacks as new data is posted.  The demo utilises the ESP8266's ability to connect via HTTPS which is required to talk to the Firebase cloud service.
+This is an IoT device using a BMP180 temp sensor on an ESP8266 micro controller.  The device connects to Google Firebase using the REST API to post sensor readings. Web clients can then access the temp data through the Firebase API.  For the demo I have a one page HMTL site using the Firebase Javascript API to receive dynamic callbacks as new data is posted.  The demo utilises the ESP8266's ability to connect via HTTPS which is required to talk to the Firebase cloud service.
  
 The device uses the following components:
  - ESP8266 12e (nodeMCU 1.0)
