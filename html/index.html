@@ -1,0 +1,111 @@
+<!--
+  IoT-demo (https://github.com/nuke66/IoT-demo)
+  
+  This is a web client that connects to Firebase (v3) to display temperature 
+  sensor readings.  
+  
+  You must populate the apiKey, authDomain, and databaseURL values for your
+  application in Firebase: 
+  
+    - apiKey => 40 character Web App key (upper/lowercase letters, numbers, and underscores)
+    - authDomain => in the format of "<yourProjectName>.firebaseapp.com"
+    - databaseURL => in the format of "https://<yourProjectId>.firebaseio.com"
+  
+  Currently if you click on "Add Firebase to your web app" in the Overview page of your 
+  Firebase app it will generate the config values for you to copy and paste.
+
+  Note: The Firebase onChange query only fires callback events when the data 
+  has changed.  So if sensor readings you just posted are exactly the same as
+  the last post the client won't receive an update event.  If you want
+  the client to receive an update everytime a post is made then add
+  another field with a timestamp/unique value to the JSON object the device
+  sends to Firebase.
+
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IoT Demo</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    
+    <!-- Firebase v3 API -->
+    <script src="https://www.gstatic.com/firebasejs/3.5.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "?????", 
+        authDomain: "????.firebaseapp.com",
+        databaseURL: "https://?????.firebaseio.com"};
+      
+      firebase.initializeApp(config);
+
+      window.addEventListener('load', function()
+      {
+         // set up query to receive callbacks when new sensor readings are posted
+        firebase.database().ref('BMP180').on('value', function(data) 
+	    {
+		  var sensor = data.val();  // retrieve new sensor readings
+          
+          // create the HTML to display new readings and update the page
+          document.getElementById('tempdata').innerHTML=
+            "<p class='boxed'><em> Temp: "     + sensor.temp + " &deg;C</em></p>" + 
+		    "<p class='boxed'><em> Press<span class=\"extra\">ure</span>: " + sensor.hpa  + "hPa</em></p>" +
+		    "<p class='boxed'><em> Alt: "      + sensor.alt  + " m</p>";  
+            
+           mydata.setValue(0, 1, sensor.temp); // update gauge data with latest temp reading
+           chart.draw(mydata, myoptions);      // re-draw gauge
+	    });
+      }); // load event
+    </script> 
+    
+    <!-- Gauge style chart -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      // Following creates the temperature gauge
+      google.charts.load('current', {'packages':['gauge']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() 
+      {
+        mydata = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['Temp' , 0]
+          ]);
+
+        myoptions = {
+          width: 300, height: 300,
+		  redColor: '#ff471a',
+          redFrom: 40, redTo: 55,
+		  yellowColor: '#ffff33',
+          yellowFrom:30, yellowTo: 40,
+		  greenColor: '#99e6ff',
+		  greenFrom: -10, greenTo: 0,
+		  max: 50,
+		  min: -10,
+		  minorTicks: 5,
+          majorTicks: ['-10','-5','0','','10','','20','','30','','40','','50']};
+
+        chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+
+        chart.draw(mydata, myoptions);
+      }
+    </script>  
+  </head>
+  <body>
+    <div class="page_content">
+      <header>
+        <h1>IoT Demo</h1>
+      </header>
+      <div id="tempdata">
+        <p class="boxed"><em> Temp: 0 &deg;C </em></p>
+        <p class="boxed"><em> Press<span class="extra">ure</span>: 0 hPa</em></p>
+        <p class="boxed"><em> Alt: 0m</em></p>
+      </div>
+      <div id="chart_con">
+        <div id="chart_div">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
