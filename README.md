@@ -27,7 +27,7 @@ You can run the device just as a temperature sensor without connecting it to Wif
 * Handles wifi drop outs/ins (SSID green = connected, SSID red = not connected).
 * Displays message payload and status (displays data size in bytes, green background = message success, red background = message failure).
 * (web page) Due to the way Firebase works you do not need to host the web page, you can just run it from your PC.  However if you want to demo it on a mobile device (like I need to) you will need to host it.
-* First and foremost this is a temperature sensor, so if it can't connect to wifi is just displays the temperature IT DOES NOT NEED WIFI OR FIREBASE TO OPERATE.  If they are present it uses them - simples!
+* First and foremost this is a temperature sensor, so if it can't connect to wifi is just displays the temperature.  IT DOES NOT NEED WIFI OR FIREBASE TO OPERATE.  If they are present it uses them - simples!
 
 ## Future Updates:
 I am already planning to add the ability to monitor multiple devices.  Although the changes to the arduino code is easy enough (I'll include the MAC address of the device in the post to Firebase) the client changes start to get a bit more complex especially as I want to have swipe navigation to swap between devices.
