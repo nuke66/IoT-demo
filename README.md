@@ -1,7 +1,7 @@
 # IoT-demo
 *IoT temperature device utilising Arduino, ESP8266, Firebase v3, and HTML/JS client*
 
-![IoT Demo](http://www.nuke66.com/temp/IoT_demo.jpg)
+<img src="IoT_demo.jpg" width="30%" height="auto" style="max-width:500px;margin-bottom:0; padding-bottom:0;">
 
 ## Intro:
 I have created this IoT demonstration as a portfolio piece.  The point of the demo isn't to make an accurate temp sensor (although you could do that), it's to demonstrate connecting an IoT device securely to a cloud service for subscribers to consume.  Importantly this demo is very low cost, as cheap as AU$25 for components and Google Firebase currently has a free pricing tier.
